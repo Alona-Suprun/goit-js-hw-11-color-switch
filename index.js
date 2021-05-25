@@ -31,3 +31,10 @@ const onStartButtonClick = () => {
 };
 
 startButton.addEventListener('click', onStartButtonClick);
+
+const onStopButtonClick = () => {
+  clearInterval(intervalId);
+  isColored = false;
+};
+
+stopButton.addEventListener('click', onStopButtonClick);
