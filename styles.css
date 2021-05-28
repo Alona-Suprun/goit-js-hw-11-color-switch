@@ -73,3 +73,6 @@ button::after {
     rgba(255, 255, 255, 0) 100%
   );
 }
+button[disabled] {
+  cursor: not-allowed;
+}

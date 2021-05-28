@@ -24,10 +24,12 @@ const onStartButtonClick = () => {
 
   intervalId = setInterval(
     () =>
-      (body.style.backgroundColor = colors[randomIntegerFromInterval(0, 5)]),
+      (body.style.backgroundColor =
+        colors[randomIntegerFromInterval(0, colors.length - 1)]),
     1000,
   );
   isColored = true;
+  startButton.setAttribute('disabled', 'disabled');
 };
 
 startButton.addEventListener('click', onStartButtonClick);
@@ -35,6 +37,7 @@ startButton.addEventListener('click', onStartButtonClick);
 const onStopButtonClick = () => {
   clearInterval(intervalId);
   isColored = false;
+  startButton.removeAttribute('disabled', 'disabled');
 };
 
 stopButton.addEventListener('click', onStopButtonClick);
